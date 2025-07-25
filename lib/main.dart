@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'widgets/vote_webview.dart';
 import 'widgets/home_screen.dart';
+// import 'widgets/my_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -67,6 +70,7 @@ class _MainScreenState extends State<MainScreen> {
         children: const [
           HomeScreen(),
           VoteWebView(),
+          // MyPage(),
         ],
       ),
       bottomNavigationBar: Container(
@@ -100,6 +104,10 @@ class _MainScreenState extends State<MainScreen> {
               icon: Icon(Icons.how_to_vote),
               label: '투표',
             ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.person),
+            //   label: '마이페이지',
+            // ),
           ],
         ),
       ),
