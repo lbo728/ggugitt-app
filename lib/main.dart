@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'widgets/vote_webview.dart';
+import 'widgets/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,7 +48,6 @@ class _MainScreenState extends State<MainScreen> {
   @override
   void initState() {
     super.initState();
-    // 상태바 스타일 설정
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
         statusBarColor: Colors.white,
@@ -101,30 +101,6 @@ class _MainScreenState extends State<MainScreen> {
               label: '투표',
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Center(
-          child: Text(
-            '홈',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
         ),
       ),
     );
