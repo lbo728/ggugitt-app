@@ -39,14 +39,9 @@ class BrandingTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'GGUGITT',
-        style: TextStyle(
-          fontSize: 32,
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
-        ),
+    return Center(
+      child: Image.asset(
+        'assets/images/img-logo-type.png',
       ),
     );
   }
