@@ -20,12 +20,14 @@ class HomeScreen extends StatelessWidget {
                 height: 40,
               ),
               BrandingTitle(),
-              SizedBox(height: 40),
+              SizedBox(
+                height: 40,
+              ),
               Expanded(
                 child: DescriptionSection(),
               ),
               HeroImage(),
-              SizedBox(height: 40),
+              // SizedBox(height: 40),
             ],
           ),
         ),
@@ -42,6 +44,8 @@ class BrandingTitle extends StatelessWidget {
     return Center(
       child: Image.asset(
         'assets/images/img-logo-type.png',
+        width: 240,
+        height: 240,
       ),
     );
   }
@@ -85,7 +89,7 @@ class HeroImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.width - 48,
+      height: MediaQuery.of(context).size.width - 240,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         image: const DecorationImage(
