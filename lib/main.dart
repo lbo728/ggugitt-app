@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'widgets/vote_webview.dart';
 import 'widgets/home_screen.dart';
 import 'widgets/my_page.dart';
 
 void main() {
+  // 카카오 Flutter SDK 초기화
+  KakaoSdk.init(
+    nativeAppKey: 'YOUR_NATIVE_APP_KEY', // 실제 네이티브 앱 키로 교체 필요
+    javaScriptAppKey: 'YOUR_JAVASCRIPT_APP_KEY', // 실제 자바스크립트 앱 키로 교체 필요
+  );
+
   runApp(
     const MyApp(),
   );
