@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'kakao_share_manager.dart';
 
 class VoteWebView extends StatefulWidget {
   const VoteWebView({
@@ -79,23 +78,10 @@ class _VoteWebViewState extends State<VoteWebView> {
         'Flutter',
         onMessageReceived: (JavaScriptMessage message) {
           debugPrint('JavaScript message: ${message.message}');
-          _handleJavaScriptMessage(message.message);
         },
       )
-      ..loadRequest(Uri.parse('https://ggugitt.com/'));
-  }
-
-  void _handleJavaScriptMessage(String message) {
-    // MAP으로 시작하는 콘솔메시지 수령
-    if (message.startsWith("MAP")) {
-      debugPrint("카카오 공유하기 호출");
-      try {
-        String jsonData = message.split("MAP : ")[1];
-        KakaoShareManager().shareMyCode(jsonData);
-      } catch (e) {
-        debugPrint('카카오 공유하기 처리 중 오류: $e');
-      }
-    }
+      ..loadRequest(Uri.parse('https://ggugitt-dev.web.app/'));
+    // ..loadRequest(Uri.parse('https://ggugitt.com/'));
   }
 
   Future<void> _launchExternalUrl(String url) async {

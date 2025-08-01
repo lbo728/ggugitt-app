@@ -15,7 +15,6 @@ dependencies:
   webview_flutter: ^4.10.0
   flutter_native_splash: ^2.4.4
   url_launcher: ^6.2.5
-  kakao_flutter_sdk: ^1.9.0
 
 dev_dependencies:
   flutter_test:

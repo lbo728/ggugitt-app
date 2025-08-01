@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
-import 'widgets/vote_webview.dart';
 import 'widgets/home_screen.dart';
-import 'widgets/my_page.dart';
+import 'widgets/vote_webview.dart';
 
 void main() {
-  // 카카오 Flutter SDK 초기화
-  KakaoSdk.init(
-    nativeAppKey: 'YOUR_NATIVE_APP_KEY', // 실제 네이티브 앱 키로 교체 필요
-    javaScriptAppKey: 'YOUR_JAVASCRIPT_APP_KEY', // 실제 자바스크립트 앱 키로 교체 필요
-  );
-
   runApp(
     const MyApp(),
   );
@@ -26,6 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '꾸깃',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.white,
@@ -78,7 +71,7 @@ class _MainScreenState extends State<MainScreen> {
         children: const [
           HomeScreen(),
           VoteWebView(),
-          MyPage(),
+          // MyPage(),
         ],
       ),
       bottomNavigationBar: Container(
@@ -112,10 +105,10 @@ class _MainScreenState extends State<MainScreen> {
               icon: Icon(Icons.how_to_vote),
               label: '투표',
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: '마이페이지',
-            ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.person),
+            //   label: '마이페이지',
+            // ),
           ],
         ),
       ),
