@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../config/env_config.dart';
 
 class VoteWebView extends StatefulWidget {
   const VoteWebView({
@@ -80,8 +81,7 @@ class _VoteWebViewState extends State<VoteWebView> {
           debugPrint('JavaScript message: ${message.message}');
         },
       )
-      ..loadRequest(Uri.parse('https://ggugitt-dev.web.app/'));
-    // ..loadRequest(Uri.parse('https://ggugitt.com/'));
+      ..loadRequest(Uri.parse(EnvConfig.baseUrl));
   }
 
   Future<void> _launchExternalUrl(String url) async {
